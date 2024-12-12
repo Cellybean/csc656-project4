@@ -27,7 +27,7 @@ int main(void)
     y[i] = 2.0f;
   }
 
-  // Run kernel on 2^29 elements
+  // Run kernel on 2^29 elements on the GPU
   int blockSize = 256;
   int numBlocks = (N + blockSize - 1) / blockSize;
   std::cout << "Number of thread blocks: " << numBlocks << std::endl;
