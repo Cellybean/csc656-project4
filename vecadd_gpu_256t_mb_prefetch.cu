@@ -27,6 +27,10 @@ int main(void)
     y[i] = 2.0f;
   }
 
+  int deviceID=0;
+  cudaMemPrefetchAsync((void *)x, N*sizeof(float), deviceID) ;
+  cudaMemPrefetchAsync((void *)y, N*sizeof(float), deviceID) ;
+
   // Run kernel on 2^29 elements on the GPU
   int blockSize = 256;
   int numBlocks = (N + blockSize - 1) / blockSize;
