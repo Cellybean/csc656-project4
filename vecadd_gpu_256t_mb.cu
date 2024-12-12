@@ -13,7 +13,7 @@ void add(int n, float *x, float *y)
 
 int main(void)
 {
-  int N = 1<<29; // 1M elements
+  int N = 1<<29; // 2^29 elements
   float *x, *y;
 
 
@@ -27,7 +27,7 @@ int main(void)
     y[i] = 2.0f;
   }
 
-  // Run kernel on 1M elements on the CPU
+  // Run kernel on 2^29 elements
   int blockSize = 256;
   int numBlocks = (N + blockSize - 1) / blockSize;
   std::cout << "Number of thread blocks: " << numBlocks << std::endl;
